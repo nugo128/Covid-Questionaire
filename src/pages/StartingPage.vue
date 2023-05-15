@@ -9,7 +9,7 @@
         v-if="imageIsSet"
         class="z-0 font-bold text-3xl w-24 flex justify-center"
       >
-        <router-link :to="'personal-info'" class="text-center"
+        <router-link :to="'personal-info'" class="text-center link"
           >კითხვარის დაწყება</router-link
         >
       </div>
@@ -52,5 +52,8 @@ export default {
 }
 .link-enter-to {
   opacity: 1;
+}
+.link:hover {
+  text-shadow: 2px 0 #bcc2c6, 3px 0 black;
 }
 </style>
