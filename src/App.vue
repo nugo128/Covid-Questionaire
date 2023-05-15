@@ -1,4 +1,5 @@
 <script setup>
+import "./assets/main.css";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 </script>
@@ -24,6 +25,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   </header>
 
   <RouterView />
+  <div class="bg-green-400">sasasd</div>
 </template>
 
 <style scoped>
