@@ -88,3 +88,15 @@ export default {
   },
 };
 </script>
+<style scoped>
+.line-enter-from {
+  translate: 20px 30px;
+  width: 0px;
+}
+.line-enter-active {
+  transition: all 0.5s ease-out;
+}
+.line-enter-to {
+  width: 620px;
+}
+</style>

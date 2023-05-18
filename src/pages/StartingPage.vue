@@ -3,7 +3,7 @@
     <transition name="logo" @after-enter="imgEnter" appear>
       <img class="w-24 h-24" src="../assets/images/StartLogo.png" alt="logo" />
     </transition>
-    <div v-if="imageIsSet" class="w-96 h-24 bg-[#B5C0C7] z-50"></div>
+    <div v-if="imageIsSet" class="w-96 h-24 bg-[#EAEAEA] z-50"></div>
     <transition name="link" appear>
       <div
         v-if="imageIsSet"
