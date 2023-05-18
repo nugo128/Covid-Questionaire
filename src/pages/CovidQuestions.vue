@@ -93,7 +93,7 @@
     </footer>
     <transition name="ball" appear>
       <img
-        class="h-[200px] absolute left-[1020px] top-[340px]"
+        class="h-[200px] absolute left-[1025px] top-[330px]"
         src="@/assets/images/redball.png"
         alt="Red ball"
       />
@@ -126,3 +126,15 @@ export default {
   },
 };
 </script>
+<style scoped>
+.ball-enter-from {
+  translate: 120px -120px;
+  width: 450px;
+}
+.ball-enter-active {
+  transition: all 0.5s ease-out;
+}
+.ball-enter-to {
+  width: 200px;
+}
+</style>
