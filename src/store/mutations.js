@@ -13,10 +13,11 @@ export default {
   },
   save_covidStatus(state, hadCovid) {
     state.info.hadCovid = hadCovid;
-    console.log(state);
   },
   save_covidTest(state, hadAntibodyTest) {
     state.info.hadAntibodyTest = hadAntibodyTest;
-    console.log(state);
+  },
+  save_antibodies(state, antibodies) {
+    state.info.antibodies = antibodies;
   },
 };

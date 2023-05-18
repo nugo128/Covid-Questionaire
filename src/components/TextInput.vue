@@ -44,6 +44,7 @@ export default {
         data = localStorage.getItem(this.name);
       }
       localStorage.setItem(this.name, data);
+      console.log(this.$store.state.info.antibodies);
     },
   },
   created() {
@@ -51,17 +52,26 @@ export default {
     const lastname = localStorage.getItem("lastname");
     const email = localStorage.getItem("email");
     const period = localStorage.getItem("period");
+    const number = localStorage.getItem("antiBodies");
+    const test_date = localStorage.getItem("date");
+    const antibodies = {
+      test_date: test_date,
+      number: number,
+    };
     if (
-      (localStorage.getItem(this.name) &&
-        (!this.$store.state.name ||
-          !this.$store.state.lastname ||
-          !this.$store.state.email)) ||
-      !this.$store.state.period
+      localStorage.getItem(this.name) &&
+      (!this.$store.state.name ||
+        !this.$store.state.lastname ||
+        !this.$store.state.email ||
+        !this.$store.state.period ||
+        !this.$store.state.number ||
+        !this.$store.state.test_date)
     ) {
       store.commit("saveData", data);
       store.commit("saveLastname", lastname);
       store.commit("saveEmail", email);
       store.commit("saveDate", period);
+      store.commit("save_antibodies", antibodies);
     }
   },
   beforeMount() {

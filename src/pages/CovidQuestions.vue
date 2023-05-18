@@ -49,20 +49,20 @@
             თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების
             რაოდენობა*
           </h2>
-          <input
-            class="outline-none ml-5 w-full px-5 py-2 bg-inherit border border-gray-600 mt-3 placeholder-gray-500"
-            type="date"
-            name="date"
-            placeholder="რიცხვი"
-            v-model="testDate"
-          />
-          <input
-            type="number"
-            class="outline-none ml-5 w-full px-5 py-2 bg-inherit border border-gray-600 mt-3 placeholder-gray-500"
-            name="antiBodies"
-            placeholder="ანტისხეულების რაოდენობა"
-            v-model="number"
-          />
+          <div class="ml-2 flex flex-col gap-1">
+            <text-input
+              type="text"
+              name="date"
+              placeholder="რიცხვი"
+              v-model="testDate"
+            />
+            <text-input
+              type="number"
+              name="antiBodies"
+              placeholder="ანტისხეულების რაოდენობა"
+              v-model="number"
+            />
+          </div>
         </div>
         <div
           v-if="values.covidStatus === 'yes' && values.covidTest === 'false'"
