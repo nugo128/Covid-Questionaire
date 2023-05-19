@@ -138,7 +138,7 @@ export default {
       hadVaccine: "",
       vaccinationStage: "",
       iAmWaiting: "",
-      lastPath: null,
+      lastPath: "",
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -150,12 +150,9 @@ export default {
     this.lastPath = this.$router.options.history.state.back;
   },
   computed: {
-    prevRoutePatch() {
-      return this.lastPath ? this.lastPath : "/";
-    },
     animation() {
       if (this.lastPath === "/covid-policy") {
-        return "reverseStar";
+        return "backStar";
       } else {
         return "star";
       }
@@ -163,3 +160,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.star-enter-from {
+  translate: -220px 220px;
+}
+.star-enter-active {
+  transition: all 0.5s ease-in;
+}
+.star-enter-to {
+  translate: 0px 0px;
+}
+.backStar-enter-from {
+  translate: 220px 220px;
+}
+.backStar-enter-active {
+  transition: all 0.5s ease-in;
+}
+.backStar-enter-to {
+  translate: 0px 0px;
+}
+</style>
