@@ -81,6 +81,17 @@
           name="workFromOffice"
           v-model="numberOfDaysFromOffice"
         />
+        <text-area
+          label="რას ფიქრობ ფიზიკურ შეკრებებზე?"
+          name="physicalMeet"
+          v-model="whatAboutMeetingsInLive"
+        />
+        <text-area
+          label="რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას
+            შეცვლიდი??"
+          name="situation"
+          v-model="tellUsYourOpinionAbout"
+        />
         <div class="w-full flex justify-end">
           <button
             type="button"
@@ -123,6 +134,7 @@ import { Form } from "vee-validate";
 import RadioInput from "@/components/RadioInput.vue";
 import FormHeader from "../components/FormHeader.vue";
 import TheNavigation from "../components/TheNavigation.vue";
+import TextArea from "../components/TextArea.vue";
 
 export default {
   components: {
@@ -130,6 +142,7 @@ export default {
     RadioInput,
     FormHeader,
     TheNavigation,
+    TextArea,
   },
   data() {
     return {
