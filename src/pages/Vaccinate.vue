@@ -62,19 +62,19 @@
           <radio-input
             value="registered_and_waiting"
             label="დარეგისტრირებული ვარ და ველოდები რიცხვს"
-            name="wait"
+            name="waiting"
             v-model="iAmWaiting"
           />
           <radio-input
             value="not_planning"
             label="არ ვგეგმავ"
-            name="wait"
+            name="waiting"
             v-model="iAmWaiting"
           />
           <radio-input
             value="had_covid_and_planning_to_be_vaccinated"
             label="გადატანილი მაქვს და ვგეგმავ აცრას"
-            name="wait"
+            name="waiting"
             v-model="iAmWaiting"
           />
           <div
@@ -142,8 +142,8 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    next((vm) => {
-      vm.prevRoute = from;
+    next((page) => {
+      page.prevRoute = from;
     });
   },
   created() {

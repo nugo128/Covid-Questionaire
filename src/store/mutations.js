@@ -20,4 +20,16 @@ export default {
   save_antibodies(state, antibodies) {
     state.info.antibodies = antibodies;
   },
+  save_vaccinated(state, vaccinated) {
+    state.info.had_vaccine = vaccinated;
+    console.log(state.info);
+  },
+  save_waiting(state, waiting) {
+    state.info.i_am_waiting = waiting;
+    console.log(state.info);
+  },
+  save_stage(state, stage) {
+    state.info.vaccination_stage = stage;
+    console.log(state.info);
+  },
 };

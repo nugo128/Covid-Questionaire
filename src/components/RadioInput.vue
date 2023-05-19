@@ -49,15 +49,10 @@ export default {
     },
   },
   created() {
-    const covidStatus = localStorage.getItem("covidStatus");
-    const test = localStorage.getItem("covidTest");
+    const data = localStorage.getItem(this.name);
 
-    if (
-      localStorage.getItem(this.name) &&
-      (!this.$store.state.covidStatus || !this.$store.state.hadAntibodyTest)
-    ) {
-      store.commit("save_covidStatus", covidStatus);
-      store.commit("save_covidTest", test);
+    if (!this.$store.state[`${this.name}`]) {
+      store.commit("save_" + this.name, data);
     }
   },
   beforeMount() {
