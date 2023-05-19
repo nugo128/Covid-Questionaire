@@ -11,4 +11,13 @@ export default {
   saveDate(state, date) {
     state.info.period = date;
   },
+  save_covidStatus(state, hadCovid) {
+    state.info.hadCovid = hadCovid;
+  },
+  save_covidTest(state, hadAntibodyTest) {
+    state.info.hadAntibodyTest = hadAntibodyTest;
+  },
+  save_antibodies(state, antibodies) {
+    state.info.antibodies = antibodies;
+  },
 };
