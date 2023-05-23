@@ -34,13 +34,23 @@ export default {
         : (finalInformation.covid_sickness_date =
             localStorage.getItem("period"));
     } else {
+      const dateInput = state.info.antibodies?.test_date
+        ? state.info.antibodies?.test_date
+        : localStorage.getItem("date");
+
+      const parts = dateInput.split("/");
+      const day = parts[0];
+      const month = parts[1];
+      const year = parts[2];
+
+      const date = new Date(year, month - 1, day);
+
+      const test_date = date.toISOString();
       finalInformation.antibodies = {
-        test_date: state.info.antibodies?.test_date
-          ? state.info.antibodies?.test_date
-          : localStorage.getItem("date"),
-        number: state.info.antibodies.number
-          ? state.info.antibodies.number
-          : localStorage.getItem("antibodies"),
+        test_date,
+        number: state.info.antibodies?.number
+          ? Number(state.info.antibodies?.number)
+          : Number(localStorage.getItem("antibodies")),
       };
     }
 
