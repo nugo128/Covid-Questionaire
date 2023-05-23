@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center">
+  <div class="w-full flex justify-center gap-20">
     <router-link v-if="pageNum !== 1" :to="previousPage"
       ><img
         src="@/assets/images/previous.png"

@@ -78,7 +78,7 @@
             v-model="iAmWaiting"
           />
           <div
-            v-if="values.wait === 'had_covid_and_planning_to_be_vaccinated'"
+            v-if="values.waiting === 'had_covid_and_planning_to_be_vaccinated'"
             class="mt-10"
           >
             <h2 class="ml-14 w-96">
@@ -92,6 +92,15 @@
               href=" https://booking.moh.gov.ge/"
             >
               https://booking.moh.gov.ge/
+            </a>
+          </div>
+          <div v-if="values.waiting === 'not_planning'" class="mt-10">
+            <a
+              class="text-blue-500 ml-12"
+              target="_blank"
+              href=" https://booking.moh.gov.ge/"
+            >
+              👉 https://booking.moh.gov.ge/
             </a>
           </div>
         </div>
