@@ -1,35 +1,44 @@
 # covid-questionaire
 
-This template should help get you started developing with Vue 3 in Vite.
+Covid questionnaire is an application that people who just started working fill out to provide information about their covid situation, vaccination and how they feel generally about covid and how Redberry can improve about its covid policy
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Prequisites](##Prequisites)
+- [Tech Stack](##Tech-stack)
+- [Getting Started](##Getting-Started)
+- [Development](##Development)
 
-## Customize configuration
+## Prequisites
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- npm@7 and up
 
-## Project Setup
+## Tech Stack
 
-```sh
+- [VueJs@3.x](https://vuejs.org/) - Front-End framework
+- [Vee-validate@4.x](https://vee-validate.logaretm.com/v4/) - form validation package
+- [tailwind CSS](https://tailwindcss.com/) - CSS library
+
+## Getting-Started
+
+1. First, you need to clone github repository:
+
+```
+git clone https://github.com/RedberryInternship/nugzar-rostiashvili-covid-questionaire.git
+```
+
+2. Next, you need to run npm install to install all the dependencies
+
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Now, everything is ready to go!
 
-```sh
+## Development
+
+You can run Vite built-in development server by executing:
+
+```
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
