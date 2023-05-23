@@ -135,6 +135,7 @@ import RadioInput from "@/components/RadioInput.vue";
 import FormHeader from "../components/FormHeader.vue";
 import TheNavigation from "../components/TheNavigation.vue";
 import TextArea from "../components/TextArea.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -150,11 +151,24 @@ export default {
       numberOfDaysFromOffice: "",
       whatAboutMeetingsInLive: "",
       tellUsYourOpinionAbout: "",
-      schema: {
-        onlineMeeting: "required",
-        workFromOffice: "required",
-      },
     };
+  },
+  methods: {
+    async sendData() {
+      const data = this.$store.getters.finalData;
+      console.log(data);
+      try {
+        const response = await axios.post(
+          "https://covid19.devtest.ge/api/create",
+          data
+        );
+        if (response.status === 201) {
+          this.$router.replace({ name: "ThankYou" });
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 };
 </script>

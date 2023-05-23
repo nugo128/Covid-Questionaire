@@ -3,7 +3,7 @@ export default {
     state.info.name = data;
   },
   saveLastname(state, lastname) {
-    state.info.lastname = lastname;
+    state.info.last_name = lastname;
   },
   saveEmail(state, email) {
     state.info.email = email;

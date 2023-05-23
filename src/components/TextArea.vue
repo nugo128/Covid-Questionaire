@@ -27,7 +27,7 @@ export default {
       if (!data) {
         data = localStorage.getItem(this.name);
       }
-      // store.commit("save_" + this.name, data);
+      store.commit("save_" + this.name, data);
       localStorage.setItem(this.name, data);
     },
   },
