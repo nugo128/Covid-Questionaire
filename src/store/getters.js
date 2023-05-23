@@ -38,20 +38,25 @@ export default {
         ? state.info.antibodies?.test_date
         : localStorage.getItem("date");
 
-      const parts = dateInput.split("/");
-      const day = parts[0];
-      const month = parts[1];
-      const year = parts[2];
+      const parts = dateInput?.split("/");
+      console.log(parts);
+      finalInformation.antibodies = {};
+      if (parts) {
+        const day = parts[0];
+        const month = parts[1];
+        const year = parts[2];
+        const date = new Date(year, month - 1, day);
+        const test_date = date.toISOString();
+        finalInformation.antibodies.test_date = test_date;
+      }
 
-      const date = new Date(year, month - 1, day);
+      const number = state.info.antibodies?.number
+        ? Number(state.info.antibodies?.number)
+        : Number(localStorage.getItem("antiBodies"));
 
-      const test_date = date.toISOString();
-      finalInformation.antibodies = {
-        test_date,
-        number: state.info.antibodies?.number
-          ? Number(state.info.antibodies?.number)
-          : Number(localStorage.getItem("antibodies")),
-      };
+      if (number) {
+        finalInformation.antibodies.number = number;
+      }
     }
 
     !state.info.had_vaccine
