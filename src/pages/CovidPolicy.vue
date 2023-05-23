@@ -113,6 +113,7 @@
       />
       <transition name="heart" appear>
         <img
+          v-if="finish"
           class="h-[170px] w-[190px] mt-60 ml-[800px] fixed"
           src="@/assets/images/heart.png"
           alt="Red heart"
@@ -151,10 +152,12 @@ export default {
       numberOfDaysFromOffice: "",
       whatAboutMeetingsInLive: "",
       tellUsYourOpinionAbout: "",
+      finish: true,
     };
   },
   methods: {
     async sendData() {
+      this.finish = false;
       const data = this.$store.getters.finalData;
       console.log(data);
       try {
@@ -172,3 +175,28 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.heart-enter-from {
+  scale: 3;
+}
+.heart-enter-active {
+  transition: all 0.6s ease-out;
+}
+.heart-enter-to {
+  scale: 1;
+}
+.heart-leave-from {
+  scale: 1;
+  filter: brightness(0);
+  z-index: 50;
+}
+.heart-leave-active {
+  transition: all 0.8s ease-in;
+}
+.heart-leave-to {
+  filter: brightness(0);
+  scale: 25;
+  z-index: 100;
+}
+</style>
