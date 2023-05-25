@@ -166,6 +166,7 @@ export default {
           data
         );
         if (response.status === 201) {
+          localStorage.clear();
           this.$router.replace({ name: "ThankYou" });
         }
       } catch (error) {
